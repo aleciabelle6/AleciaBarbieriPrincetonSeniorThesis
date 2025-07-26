@@ -1,0 +1,193 @@
+% Geometry Calculations
+g = 9.81; % m/s^2
+
+myWeightLB = 120; %lb
+%batteryWeightLB = 5; %lb
+
+myWeight = myWeightLB * 0.453592; %kg
+%batteryWeightEst = batteryWeightLB * 0.453592; %kg
+batteryWeightEst = 5; %kg
+
+% EDF Calculations
+%For a 120mm EDF (4.72 inches), the dimensions are approximately:
+%Radius: 60mm (0.06 m or 2.36 inches)
+%Height: 80mm-120mm (0.08 m to 0.12 m) depending on the model
+
+% carbon fiber density is 1400 kg/m^3
+carbonFiberDensity = 1400; % kg/m^3
+nylonDensity = 1140; %kg/m^3
+
+numEDF = 2;
+r_fan = 0.2; % m
+A_fan = (pi() * r_fan^2) / 3; % m^2
+h_fan = 0.02; % m
+V_fan = A_fan * h_fan; % m^3
+motorWeight = 2; % kg
+unitWeightEDFEst = nylonDensity * V_fan + motorWeight; %kg
+totalEDFWeightEst = numEDF * unitWeightEDFEst; %kg
+
+miscElectronicsWeight = 1; %kg
+harnessGearWeight = 2; %kg
+
+nonWingMass = totalEDFWeightEst + batteryWeightEst + myWeight + miscElectronicsWeight;
+
+% Nomex Honeycomb Foam: density is 29 kg/m^3
+% https://www.easycomposites.co.uk/3mm-29kg-aerospace-nomex-honeycomb
+foamDensity = 20; %kg/m^3
+
+cfShellThickness_TaB = cfShellThickness*2; %top and bottom estimation
+
+% honeycomb wing
+t_over_c0 = varTable{strcmp(varTable.VariableName, "Wing t/c 0"), iteration};
+t_over_c1 = varTable{strcmp(varTable.VariableName, "Wing t/c 1"), iteration};
+t_over_c2 = varTable{strcmp(varTable.VariableName, "Wing t/c 2"), iteration};
+t_over_c3 = varTable{strcmp(varTable.VariableName, "Wing t/c 3"), iteration};
+t_over_c4 = varTable{strcmp(varTable.VariableName, "Wing t/c 4"), iteration};
+S_1 = varTable{strcmp(varTable.VariableName, "Section Area 1"), iteration};
+S_2 = varTable{strcmp(varTable.VariableName, "Section Area 2"), iteration};
+S_3 = varTable{strcmp(varTable.VariableName, "Section Area 3"), iteration};
+S_4 = varTable{strcmp(varTable.VariableName, "Section Area 4"), iteration};
+
+t_over_c_values = [t_over_c0, t_over_c1, t_over_c2, t_over_c3, t_over_c4];
+area_values = [S_1, S_2, S_3, S_4];
+
+if isempty(S_2)
+    % If the cell is empty
+    totalWingDensity = t_over_c0 * MAC_wing;
+else
+    % If the cell contains data
+    for i = 1:numel(area_values)
+        t_over_c_avg = (t_over_c_values(i) + t_over_c_values(i+1)) / 2;
+        wingThickness = t_over_c_avg * MAC_wing;
+        foamThickness = wingThickness - (cfShellThickness_TaB);
+        wingDensity = carbonFiberDensity * (cfShellThickness_TaB/wingThickness) + foamDensity * (foamThickness/wingThickness);
+        densityTimesArea(i) = wingDensity * area_values(i);
+    end
+    totalWingDensity = sum(densityTimesArea) / sum(area_values);
+end 
+
+wingVolume = wingWeight / totalWingDensity;
+
+% wing spar calculations
+wall_t_spar = 1.5e-3;  % Spar wall thickness
+[r_outer_spar, r_inner_spar, diameter_spar] = findWingSparDimsMin((nonWingMass + wingWeight) * g, S, wall_t_spar);
+L_spar = wingspan_true - 0.2; % m, slightly less than full span to account fot tip losses
+A_spar = pi * (r_outer_spar^2 - r_inner_spar^2);
+V_spar = A_spar * L_spar;
+wingSparWeight = V_spar * carbonFiberDensity;
+
+wingMass = wingWeight + wingSparWeight;
+totalMass = nonWingMass + wingMass; %kg
+
+disp(['Component Masses:']);
+disp(['Total EDF Mass: ', num2str(totalEDFWeightEst), ' kg']);
+disp(['Battery Mass: ', num2str(batteryWeightEst), ' kg']);
+disp(['Human Mass: ', num2str(myWeight), ' kg']);
+disp(['Wing Mass: ', num2str(wingMass), ' kg']);
+disp(['Misc. Electronics Mass: ', num2str(miscElectronicsWeight), ' kg']);
+disp(['Harness Gear Mass: ', num2str(harnessGearWeight), ' kg']);
+%disp(['Wing Spar Mass: ', num2str(wingSparWeight), ' kg']);
+disp(['-----------------------']);
+disp(['Total Estimated Mass: ', num2str(totalMass), ' kg']);
+disp(['-----------------------']);
+
+
+W = totalMass * g; % N
+T = W;
+T_unit = T / numEDF;
+
+wingloading_curr = W/S;
+
+disp(['For hover, thrust >= ', num2str(T), ' N']);
+disp(['-----------------------']);
+
+% Velocity
+
+
+% Calculate variables at altitude
+p_sl = 101325; %Pa
+rho_sl = 1.225; %kg/m3
+temp_sl = 288.15; %K
+R = 287; %J/(kg-K)
+lapse_rate = 0.0065; %K/m
+gamma = 1.4; % for dry air 
+
+Mission;
+%{
+h = 1500; % m
+temp_h = temp_sl - h * lapse_rate; % K
+press_h = p_sl * (temp_h / temp_sl)^(g / (lapse_rate*R)); % Pa
+rho_h = press_h / (R * temp_h); % kg/m^3
+%}
+
+visc_sl = 1.716e-5; % kg/(ms) (reference dynamic viscosity at sea level)
+S_visc = 110.4; % K (sutherland constant for air)
+% Sutherland equation
+%visc_h = visc_sl * ((temp_h + S_visc) / (temp_sl + S_visc)) * ((temp_sl/temp_h)^(3/2)); % kg/(ms)
+
+%v = sqrt(T_unit / (rho_sl * A_fan)); % m/s
+
+a = sqrt(gamma * R * temp_sl);
+
+Mach = V / a;
+
+rho_curr = rho_sl;
+
+Re = (rho_curr * V * MAC_wing) / visc_sl;
+COF_air = 1/sqrt(Re);
+q_TAS = 0.5 * rho_curr * V^2; % kg / ms^2 = Pa
+
+wingWeightGoal = (0.36 * S * q_TAS * AR_true) / totalMass;
+disp(['Wing Mass Goal = ', num2str(wingWeightGoal), ' kg']);
+disp(['Actual Wing Weight = ', num2str(wingWeight), ' kg']);
+
+disp(['Variables to continue iterationn:']);
+disp(['Wing Density = ', num2str(totalWingDensity), ' kg/m^3']);
+disp(['Mach = ', num2str(Mach)]);
+disp(['Re = ', num2str(Re)]);
+
+% Write variables from PowerRequired to Excel file
+iterationCol = find(strcmp(varTable.Properties.VariableNames, iteration));
+
+varTable{strcmp(varTable.VariableName, 'Wing Volume (m^3)'), iterationCol} = wingVolume;
+varTable{strcmp(varTable.VariableName, 'Wing Mass (kg)'), iterationCol} = wingWeight;
+
+
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+varTable{strcmp(varTable.VariableName, 'Wing spar mass (kg)'), iterationCol} = wingSparWeight;
+
+varTable{strcmp(varTable.VariableName, 'Total Mass in System (kg)'), iterationCol} = totalMass;
+varTable{strcmp(varTable.VariableName, 'Min. Required Thrust (N)'), iterationCol} = W;
+varTable{strcmp(varTable.VariableName, 'Min. Required Thrust per EDF (N)'), iterationCol} = T_unit;
+varTable{strcmp(varTable.VariableName, 'Exhaust Velocity (m/s)'), iterationCol} = V;
+varTable{strcmp(varTable.VariableName, 'Mach'), iterationCol} = Mach;
+varTable{strcmp(varTable.VariableName, 'C_L_Max'), iterationCol} = CL_max;
+varTable{strcmp(varTable.VariableName, 'W/S (N/m^2)'), iterationCol} = wingloading_curr;
+varTable{strcmp(varTable.VariableName, 'Re'), iterationCol} = Re;
+varTable{strcmp(varTable.VariableName, 'Wing Thickness (m)'), iterationCol} = wingThickness;
+
+writetable(varTable, 'ThesisWingOptimizationVariables.xlsx');
+
+function [r_outer, r_inner, best_diameter] = findWingSparDimsMin(W, S, t)
+    M_max = (W * S) / 4;  % Max bending moment
+    
+    % Carbon fiber properties
+    sigma_max = 400e6;  % Max allowable stress (SF = 2, actual ~800 MPa)
+    
+    % Finding the minimum required diameter
+    for d_outer = 0.025:0.001:0.1  % Testing diameters from 35mm to 80mm
+        r_outer = d_outer / 2;
+        r_inner = r_outer - t;
+        I = (pi / 4) * (r_outer^4 - r_inner^4);  % Second moment of area
+        sigma = (M_max * r_outer) / I;  % Bending stress
+        
+        if sigma < sigma_max
+            best_diameter = d_outer; % m
+            break;
+        end
+    end
+end

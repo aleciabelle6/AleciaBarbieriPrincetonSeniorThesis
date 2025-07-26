@@ -1,0 +1,274 @@
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.00000                         Wake adv. ratio:    0.45282
+ no. blades : 11            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   15.0        power(W)   :   497.       torque(N-m):   2.37
+ Efficiency :  0.8144       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9490       Eff ideal  :   0.9707     Tcoef      :     0.1245
+ Tnacel(N)  :     0.4853    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -0.8304    Pvisc(W)   :   46.9
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.08911     Cp:    0.14770    J:    1.35001
+                Tc:    0.12450     Pc:    0.15287  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.00000                         Wake adv. ratio:    0.22272
+ no. blades : 11            radius(m)  :   0.3000     adv. ratio:     0.21486
+ thrust(N)  :   15.0        power(W)   :   547.       torque(N-m):   1.30
+ Efficiency :  0.7409       speed(m/s) :   27.000     rpm        :   3999.984
+ Eff induced:  0.9647       Eff ideal  :   0.9707     Tcoef      :     0.1245
+ Tnacel(N)  :     0.4598    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -0.4759    Pvisc(W)   :   113.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.02228     Cp:    0.02030    J:    0.67500
+                Tc:    0.12450     Pc:    0.16804  adv:    0.21486
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.00000                         Wake adv. ratio:    0.45808
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   18.4        power(W)   :   627.       torque(N-m):   2.99
+ Efficiency :  0.7950       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9381       Eff ideal  :   0.9644     Tcoef      :     0.1531
+ Tnacel(N)  :     0.7227    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -1.0911    Pvisc(W)   :   64.1
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.10960     Cp:    0.18610    J:    1.35001
+                Tc:    0.15314     Pc:    0.19261  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.10000                         Wake adv. ratio:    0.49895
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   17.3        power(W)   :   627.       torque(N-m):   2.99
+ Efficiency :  0.7441       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.8612       Eff ideal  :   0.9665     Tcoef      :     0.1433
+ Tnacel(N)  :     0.6409    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -1.0340    Pvisc(W)   :   52.8
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.10258     Cp:    0.18610    J:    1.35001
+                Tc:    0.14332     Pc:    0.19261  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.46925
+ no. blades : 11            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   11.1        power(W)   :   400.       torque(N-m):   1.91
+ Efficiency :  0.7471       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9158       Eff ideal  :   0.9780     Tcoef      :     0.0920
+ Tnacel(N)  :     0.2845    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -0.8764    Pvisc(W)   :   47.9
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06581     Cp:    0.11892    J:    1.35001
+                Tc:    0.09195     Pc:    0.12308  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.35984
+ no. blades : 11            radius(m)  :   0.3500     adv. ratio:     0.33485
+ thrust(N)  :   10.9        power(W)   :   400.       torque(N-m):   1.74
+ Efficiency :  0.7362       speed(m/s) :   27.000     rpm        :   2199.970
+ Eff induced:  0.9306       Eff ideal  :   0.9839     Tcoef      :     0.0666
+ Tnacel(N)  :     0.1992    hub rad.(m):   0.0600     disp. rad. :    0.0600
+ Tvisc(N)   :    -0.7063    Pvisc(W)   :   63.1
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.02893     Cp:    0.04133    J:    1.05196
+                Tc:    0.06657     Pc:    0.09042  adv:    0.33485
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.46914
+ no. blades : 11            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   11.1        power(W)   :   400.       torque(N-m):   1.91
+ Efficiency :  0.7457       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9160       Eff ideal  :   0.9781     Tcoef      :     0.0918
+ Tnacel(N)  :     0.2814    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8972    Pvisc(W)   :   48.0
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06569     Cp:    0.11892    J:    1.35001
+                Tc:    0.09178     Pc:    0.12308  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.42498
+ no. blades : 11            radius(m)  :   0.3000     adv. ratio:     0.39065
+ thrust(N)  :   10.9        power(W)   :   400.       torque(N-m):   1.74
+ Efficiency :  0.7379       speed(m/s) :   27.000     rpm        :   2200.017
+ Eff induced:  0.9192       Eff ideal  :   0.9783     Tcoef      :     0.0908
+ Tnacel(N)  :     0.2730    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8378    Pvisc(W)   :   54.4
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.05372     Cp:    0.08935    J:    1.22726
+                Tc:    0.09083     Pc:    0.12308  adv:    0.39065
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.42491
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.39065
+ thrust(N)  :   10.9        power(W)   :   400.       torque(N-m):   1.74
+ Efficiency :  0.7322       speed(m/s) :   27.000     rpm        :   2200.017
+ Eff induced:  0.9194       Eff ideal  :   0.9784     Tcoef      :     0.0901
+ Tnacel(N)  :     0.2704    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8648    Pvisc(W)   :   56.1
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.05330     Cp:    0.08935    J:    1.22726
+                Tc:    0.09012     Pc:    0.12308  adv:    0.39065
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.46124
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   6.00        power(W)   :   228.       torque(N-m):   1.09
+ Efficiency :  0.7118       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9317       Eff ideal  :   0.9879     Tcoef      :     0.0498
+ Tnacel(N)  :     0.0898    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.6412    Pvisc(W)   :   35.1
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.03564     Cp:    0.06760    J:    1.35001
+                Tc:    0.04980     Pc:    0.06997  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.56206
+ no. blades : 12            radius(m)  :   0.2500     adv. ratio:     0.51566
+ thrust(N)  :   6.19        power(W)   :   228.       torque(N-m):   1.09
+ Efficiency :  0.7346       speed(m/s) :   27.000     rpm        :   2000.008
+ Eff induced:  0.9174       Eff ideal  :   0.9822     Tcoef      :     0.0740
+ Tnacel(N)  :     0.1371    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.6661    Pvisc(W)   :   25.8
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.07628     Cp:    0.16822    J:    1.61999
+                Tc:    0.07402     Pc:    0.10076  adv:    0.51566
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.46906
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.42972
+ thrust(N)  :   11.0        power(W)   :   400.       torque(N-m):   1.91
+ Efficiency :  0.7403       speed(m/s) :   27.000     rpm        :   1999.992
+ Eff induced:  0.9161       Eff ideal  :   0.9782     Tcoef      :     0.0911
+ Tnacel(N)  :     0.2791    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.9264    Pvisc(W)   :   49.5
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06521     Cp:    0.11892    J:    1.35001
+                Tc:    0.09111     Pc:    0.12308  adv:    0.42972
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.42491
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.39065
+ thrust(N)  :   10.9        power(W)   :   400.       torque(N-m):   1.74
+ Efficiency :  0.7322       speed(m/s) :   27.000     rpm        :   2200.017
+ Eff induced:  0.9194       Eff ideal  :   0.9784     Tcoef      :     0.0901
+ Tnacel(N)  :     0.2704    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8648    Pvisc(W)   :   56.1
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.05330     Cp:    0.08935    J:    1.22726
+                Tc:    0.09012     Pc:    0.12308  adv:    0.39065
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.38842
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.35810
+ thrust(N)  :   10.7        power(W)   :   400.       torque(N-m):   1.59
+ Efficiency :  0.7227       speed(m/s) :   27.000     rpm        :   2399.991
+ Eff induced:  0.9219       Eff ideal  :   0.9787     Tcoef      :     0.0889
+ Tnacel(N)  :     0.2614    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8110    Pvisc(W)   :   62.8
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.04421     Cp:    0.06882    J:    1.12500
+                Tc:    0.08895     Pc:    0.12308  adv:    0.35810
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.44588
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.40926
+ thrust(N)  :   10.9        power(W)   :   400.       torque(N-m):   1.82
+ Efficiency :  0.7364       speed(m/s) :   27.000     rpm        :   2099.977
+ Eff induced:  0.9179       Eff ideal  :   0.9783     Tcoef      :     0.0906
+ Tnacel(N)  :     0.2747    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8945    Pvisc(W)   :   52.8
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.05884     Cp:    0.10272    J:    1.28573
+                Tc:    0.09063     Pc:    0.12307  adv:    0.40926
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.24884
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.21486
+ thrust(N)  :   50.8        power(W)   :  0.177E+04   torque(N-m):   4.22
+ Efficiency :  0.7758       speed(m/s) :   27.000     rpm        :   3999.984
+ Eff induced:  0.8635       Eff ideal  :   0.9123     Tcoef      :     0.4214
+ Tnacel(N)  :     4.1348    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8256    Pvisc(W)   :   154.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.07540     Cp:    0.06560    J:    0.67500
+                Tc:    0.42142     Pc:    0.54320  adv:    0.21486
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.24253
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.20962
+ thrust(N)  :   50.7        power(W)   :  0.177E+04   torque(N-m):   4.12
+ Efficiency :  0.7743       speed(m/s) :   27.000     rpm        :   4099.975
+ Eff induced:  0.8643       Eff ideal  :   0.9125     Tcoef      :     0.4206
+ Tnacel(N)  :     4.1161    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.8118    Pvisc(W)   :   159.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.07163     Cp:    0.06092    J:    0.65854
+                Tc:    0.42057     Pc:    0.54319  adv:    0.20962
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.23082
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.19987
+ thrust(N)  :   50.5        power(W)   :  0.177E+04   torque(N-m):   3.92
+ Efficiency :  0.7710       speed(m/s) :   27.000     rpm        :   4299.978
+ Eff induced:  0.8659       Eff ideal  :   0.9128     Tcoef      :     0.4188
+ Tnacel(N)  :     4.0777    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -0.7856    Pvisc(W)   :   169.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06484     Cp:    0.05281    J:    0.62791
+                Tc:    0.41877     Pc:    0.54317  adv:    0.19987
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.22970
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.19987
+ thrust(N)  :   46.9        power(W)   :  0.177E+04   torque(N-m):   3.92
+ Efficiency :  0.7171       speed(m/s) :   27.000     rpm        :   4299.978
+ Eff induced:  0.8701       Eff ideal  :   0.9179     Tcoef      :     0.3895
+ Tnacel(N)  :     3.6608    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -1.2511    Pvisc(W)   :   272.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06031     Cp:    0.05281    J:    0.62791
+                Tc:    0.38952     Pc:    0.54317  adv:    0.19987
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.23016
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.19987
+ thrust(N)  :   48.4        power(W)   :  0.177E+04   torque(N-m):   3.92
+ Efficiency :  0.7391       speed(m/s) :   27.000     rpm        :   4299.978
+ Eff induced:  0.8684       Eff ideal  :   0.9158     Tcoef      :     0.4015
+ Tnacel(N)  :     3.8294    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -1.0620    Pvisc(W)   :   230.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06216     Cp:    0.05281    J:    0.62791
+                Tc:    0.40148     Pc:    0.54317  adv:    0.19987
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.22983
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.19987
+ thrust(N)  :   47.4        power(W)   :  0.177E+04   torque(N-m):   3.92
+ Efficiency :  0.7239       speed(m/s) :   27.000     rpm        :   4299.978
+ Eff induced:  0.8696       Eff ideal  :   0.9173     Tcoef      :     0.3932
+ Tnacel(N)  :     3.7081    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -1.1609    Pvisc(W)   :   260.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06088     Cp:    0.05281    J:    0.62791
+                Tc:    0.39320     Pc:    0.54318  adv:    0.19987
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.24141
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.20962
+ thrust(N)  :   47.3        power(W)   :  0.177E+04   torque(N-m):   4.12
+ Efficiency :  0.7229       speed(m/s) :   27.000     rpm        :   4099.975
+ Eff induced:  0.8683       Eff ideal  :   0.9174     Tcoef      :     0.3927
+ Tnacel(N)  :     3.7214    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -1.2964    Pvisc(W)   :   256.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06687     Cp:    0.06092    J:    0.65854
+                Tc:    0.39267     Pc:    0.54316  adv:    0.20962
+
+ Ducted Potential Formulation Solution:  Designed blade
+ Vdisk/Vslip:    1.05000                         Wake adv. ratio:    0.24131
+ no. blades : 12            radius(m)  :   0.3000     adv. ratio:     0.20962
+ thrust(N)  :   47.1        power(W)   :  0.177E+04   torque(N-m):   4.12
+ Efficiency :  0.7197       speed(m/s) :   27.000     rpm        :   4099.975
+ Eff induced:  0.8687       Eff ideal  :   0.9177     Tcoef      :     0.3909
+ Tnacel(N)  :     3.6894    hub rad.(m):   0.0500     disp. rad. :    0.0500
+ Tvisc(N)   :    -1.2679    Pvisc(W)   :   264.
+ rho(kg/m3) :   1.16900     Vsound(m/s):  338.000     mu(kg/m-s) : 0.1764E-04
+                Ct:    0.06658     Cp:    0.06092    J:    0.65854
+                Tc:    0.39093     Pc:    0.54315  adv:    0.20962

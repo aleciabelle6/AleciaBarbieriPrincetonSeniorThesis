@@ -1,0 +1,26 @@
+% Givens
+h = 500; % m
+x_travel = 20000; % m
+x_accel = 50;
+
+optimal_glide_angle = opt_glide_angle_deg_sel;
+optimal_glide_velocity = opt_glide_velocity_sel; % m/s
+
+v0 = 0; % m/s
+V_cruise = V_sel; % m/s
+
+x_glide_hor = h / sind(optimal_glide_angle);
+x_cruise = x_travel - x_glide_hor - x_accel;
+
+x_glide_true = h / sind(optimal_glide_angle);
+
+acel = (V_cruise^2 - v0^2) / (2 * x_accel); % assuming constant a
+
+t_accel = sqrt(2 * x_accel / acel);
+t_cruise = x_cruise / V_cruise;
+t_glide = x_glide_true / optimal_glide_velocity;
+
+t_tot = t_accel + t_cruise + t_glide;
+disp(['Total minutes of travel: ', num2str(t_tot / 60)]);
+disp(['Distance in level flight: ', num2str(x_cruise)]);
+disp(['Distance in glide flight: ', num2str(x_glide_true)]);

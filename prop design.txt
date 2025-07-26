@@ -1,0 +1,42 @@
+prop design:
+
+20 N of thrust for cruise
+
+380 N of thrust for hover (use FM for efficiency)
+
+-model for cruise
+-get both rseq and vseq (and aseq for the heck of it, J=V/nD)
+-find the RPM for 380N of thrust on rseq
+-use vseq to see if efficiency is maintained from 0-30 m/s
+
+J = V(1) / n(from RPM from rseq) D(set)
+
+find aseq sweep where J = the vaule above for hover
+take that power and thats the power
+
+
+-get the rpm from rseq
+-
+
+-get vseq all the way down from 0-40 with increments of 1 (get the power and thrust and you're good to go
+
+parameters:
+Number of EDFs					
+T_Hover (Unit)					
+T_Cruise (Unit)					
+T_Glide (Unit)					
+
+P_Hover (Unit)					
+P_Cruise (Unit)
+Prop efficiency for Cruise
+FM for hover					
+P_Cruise w/ effs (Unit)	
+P_Hover w/ FM*effs (Unit)
+
+RPM_Hover					
+RPM_Cruise
+
+J_operating
+
+if power changes 
+			

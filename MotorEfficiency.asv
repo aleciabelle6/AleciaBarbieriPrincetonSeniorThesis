@@ -1,0 +1,132 @@
+NewPowerRequiredMethod;
+
+% Efficiency assumptions
+motor_E = 0.8;
+prop_E = 0.8;
+system_total_E = motor_E * prop_E;
+
+P_req_unit = P_req_level_curr / numEDF;
+P_electrical_unit = P_req_unit / system_total_E; % accounting for efficiency
+P_max_unit = 3 * P_electrical_unit; % max power of motor should be about 3 times the cruise power
+
+% throttle for cruise conditions
+throttle_max = 0.2;
+voltage = 48;
+
+motorData = readtable('ThesisWingOptimizationVariables.xlsx', 'Sheet', 'MotorSelection');
+
+% Extract the columns for Kv, I0, R
+motor_names = motorData.MotorName; % Column for Motor Name (adjust name based on your table)
+Kv = motorData.K_v;    % Column for Kv
+I0 = motorData.I_0_A_;    % Column for I0
+R = motorData.R_ohms_;      % Column for R
+
+motors = [];
+for i = 1:height(motorData)
+    motors = [motors; {motor_names{i}, Kv(i), I0(i), R(i)}]; % Append motor name and values
+end
+
+voltage_supplied = throttle_max * voltage;
+figure;
+hold on;
+
+for i = 1:size(motors, 1)
+    Kv_val = motors{i, 2};  % Extract Kv from the cell array
+    I0_val = motors{i, 3};  % Extract I0 from the cell array
+    R_val = motors{i, 4};   % Extract R from the cell array
+    
+    omegas = linspace(0, voltage_supplied * Kv_val, 100);  % Use the extracted numeric values
+    effs = zeros(size(omegas));  % Preallocate array for efficiency
+    
+    % Loop to calculate efficiency for each omega value
+    for j = 1:length(omegas)
+        omega = omegas(j);
+        eff = eta_func(omega, voltage_supplied, I0_val, R_val, Kv_val);
+        if eff < 0
+            eff = 0;
+        end
+        effs(j) = eff;  % Store the efficiency value in the array
+    end
+    plot(omegas, effs, 'DisplayName', motor_names{i});
+end
+
+hold off;
+legend show;
+xlabel('omega (RPM)');
+ylabel('Efficiency');
+title('Motor Efficiency vs Angular Velocity');
+grid on;
+
+
+
+%% Motor Validation
+throttle_max = 0.427;
+torque_goal = 0.227;
+omega_goal = 7800;
+voltage = 22.2;
+voltage_supplied = throttle_max * voltage;
+
+% Motor format: [Kv, I0, R]
+tmotor3250_850 = [850, 2.0, 0.014];
+tmotor3250_550 = [550, 1.1, 0.031];
+motors = [tmotor3250_550; tmotor3250_850];
+
+figure(); 
+hold on;
+all_efficiencies = cell(size(motors,1),1);
+
+for i = 1:size(motors,1)
+    motor = motors(i,:);
+    Kv = motor(1); I0 = motor(2); R = motor(3);
+    omegas = linspace(0, voltage_supplied * Kv, 100);
+    etas = zeros(size(omegas));
+
+    for j = 1:length(omegas)
+        etas(j) = eta_func(omegas(j), voltage_supplied, I0, R, Kv);
+    end
+
+    all_efficiencies{i} = etas;
+    volt = (2*pi*Kv*torque_goal/60 + I0)*R + omega_goal/Kv;
+    eta_for_goal = eta_func(omega_goal, volt, I0, R, Kv);
+    fprintf('Motor %d: %g Kv, %g A, %g ohms\n', i, Kv, I0, R);
+    fprintf('eta for goal: %g\n', eta_for_goal);
+    fprintf('V: %g\n', V);
+    fprintf('proportion of max voltage: %g\n\n', V/voltage);
+
+    plot(omegas, etas);
+end
+
+xlabel('omega');
+ylabel('eta');
+title('Motor Efficiency vs Angular Velocity');
+legend('tmotor3250');
+
+figure();
+hold on;
+for i = 1:size(motors,1)
+    motor = motors(i,:);
+    Kv = motor(1); I0 = motor(2); R = motor(3);
+    omegas = linspace(0, voltage_supplied * Kv, 100);
+    torques = zeros(size(omegas));
+    for j = 1:length(omegas)
+        I = (voltage_supplied - omegas(j)/Kv)/R;
+        Kt = 60/(2*pi*Kv);
+        torques(j) = Kt * (I - I0);
+        if torques(j) < 0
+            torques(j) = 0;
+        end
+    end
+    plot(omegas, torques);
+end
+xlabel('Angular Velocity (rad/s)');
+ylabel('Torque (N·m)');
+title('Motor Torque vs Angular Velocity');
+legend('tmotor3250');
+
+function eta = eta_func(omega, V, I0, R, Kv)
+    eta = (1 - I0*R/(V - omega/Kv)) * omega / (V*Kv);
+    if eta < 0
+        eta = 0;
+    end
+end
+
